@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section Scripts
+{
+    <script src="@Url.Content("~/Scripts/jquery-3.3.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/home/index.js")"></script>
+}
+
+
+    <div style=" background-color:azure; border-color:black; border:solid">
+        <br />
+        <div>
+            <b>Select your Company:</b>
+        </div>
+
+
+        <div>
+            @Html.DropDownList("Company", ViewBag.listCompanies as List<SelectListItem>, new { style = "width: 200px;" })
+
+        </div>
+        <br />
+
+        <div>
+            <b>Select Store</b>
+        </div>
+        <div>
+            @Html.DropDownList("Store", new SelectList(string.Empty, "Value", "Text"), "--Select Store--", new { style = "width:200px" })
+        </div>
+        <br />
+    </div>
